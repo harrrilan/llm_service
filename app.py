@@ -8,7 +8,7 @@ def generate_response(prompt):
     response = generator(prompt, max_length=100, num_return_sequences=1)
     return response[0]["generated_text"]
 
-if name == "main":
+if __name__ == "__main__":
     prompt = input("Enter a prompt: ")  # Get user input
     response = generate_response(prompt)
     print("Generated Response: ", response)
