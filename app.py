@@ -9,8 +9,11 @@ def generate_response(prompt):
     return response[0]["generated_text"]
 
 if __name__ == "__main__":
-    prompt = input("Enter a prompt: ")  # Get user input
-    response = generate_response(prompt)
-    print("Generated Response: ", response)
-
-generate_response("Its my birthday today. I used to get sad on my birthday for the past 10 years, but i started feeling grateful and happy. what can you say about this")
+    while True:
+        prompt = input("Enter a prompt (or type 'exit' to quit): ")
+        if prompt.lower() == 'exit':
+            print("Thank you for using the text generator. Goodbye!")
+            break
+        response = generate_response(prompt)
+        print("Generated Response:", response)
+        print()  # Add a blank line for readability
